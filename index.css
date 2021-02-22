@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+body {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: lightcyan;
+}
+
+#container {
+    margin: auto;
+    width: 600px;
+    padding: 5px;
+}
+
+#title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 50px;
+    margin: 5px;
+}
+
+#list {
+    margin: auto;
+    width: fit-content;
+}
+
+#thingstodo {
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-radius: 17px;
+    padding: 7px;
+    padding-left: 15px;
+    width: 300px;
+}
+
+#thingstodo:focus {
+    outline: none;
+}
+
+#addTodo:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: none;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    padding-left: 10px;
+}
+
+.fa-check {
+    color: rgb(193, 234, 248);
+}
+
+.fa-check:hover {
+    color: rgb(58, 255, 255);
+    cursor: pointer;
+}
+
+.deleteLi {
+    animation-name: checked;
+    animation-duration: 1.5s;
+}
+
+@keyframes checked {
+    from {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.50
+    }
+    to {
+        opacity: 0
+    }
+}
+
+li {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 15px;
+    list-style: none;
+    margin: auto;
+    width: 480px;
+    text-align: left;
+}
+
+button {
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+}
