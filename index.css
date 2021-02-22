@@ -40,15 +40,8 @@ body {
     cursor: pointer;
 }
 
-input[type="checkbox" i] {
-    background-color: initial;
-    cursor: default;
-    appearance: none;
-    box-sizing: border-box;
-    margin: 3px 3px 3px 4px;
-    padding: initial;
-    border: initial;
-    padding-left: 10px;
+.todosAdd {
+    padding-left: 15px;
 }
 
 .fa-check {
@@ -62,7 +55,7 @@ input[type="checkbox" i] {
 
 .deleteLi {
     animation-name: checked;
-    animation-duration: 1.5s;
+    animation-duration: 0.3s;
 }
 
 @keyframes checked {
@@ -82,8 +75,9 @@ li {
     font-size: 15px;
     list-style: none;
     margin: auto;
-    width: 480px;
+    width: 430px;
     text-align: left;
+    line-height: 30px;
 }
 
 button {
