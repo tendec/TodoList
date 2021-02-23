@@ -42,14 +42,15 @@ body {
 
 .todosAdd {
     padding-left: 15px;
+    padding-right: 10px;
 }
 
 .fa-check {
-    color: rgb(193, 234, 248);
+    color: rgb(213, 242, 252);
 }
 
 .fa-check:hover {
-    color: rgb(58, 255, 255);
+    color: rgb(85, 180, 180);
     cursor: pointer;
 }
 
@@ -80,10 +81,100 @@ li {
     line-height: 30px;
 }
 
-button {
+li:hover .btnPriority {
+    transform: scale(1);
+}
+
+#addTodo {
     background-color: white;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     font-weight: bold;
+    padding: 0px;
+}
+
+.btnPriority {
+    background-color: rgb(193, 234, 248);
+    font-weight: bold;
+    border-radius: 25%;
+    font-size: 10px;
+    text-align: center;
+    padding: 0px;
+    border: none;
+    transform: scale(0);
+    transition: transform 200ms;
+}
+
+.highBtn {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    animation: highBtnAnimation 1s;
+    animation-iteration-count: infinite;
+}
+
+/* .redIsHigh {
+    color: red;
+}
+
+.yellowIsMedium {
+
+}
+
+.greenIsLow {
+
+}
+*/
+.mediumBtn {
+    margin: 5px;
+    width: 50px;
+    height: 30px;
+    animation: mediumBtnAnimation 1s;
+    animation-iteration-count: infinite;
+}
+
+.lowBtn {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    animation: lowBtnAnimation 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes highBtnAnimation {
+    from {
+        color: black
+    }
+    to {
+        color: rgb(247, 78, 78)
+    }
+}
+
+@keyframes mediumBtnAnimation {
+    from {
+        color: black
+    }
+    to {
+        color: rgb(255, 252, 60)
+    }
+}
+
+@keyframes lowBtnAnimation {
+    from {
+        color: black
+    }
+    to {
+        color: rgb(92, 238, 92)
+    }
+}
+
+button.btnPriority:hover {
+    color: rgb(58, 255, 255);
+    cursor: pointer;
+    background-color: rgb(106, 233, 233);
+}
+
+button:focus {
+    outline: none;
 }

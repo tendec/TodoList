@@ -1,16 +1,19 @@
-let todoStorageArr = [];
 let add = document.getElementById("addTodo");
 add.onclick = function () {
     let inputElement = document.getElementById("thingstodo");
-    createTodoItem(inputElement.value);
-    todoStorageArr.push(inputElement.value);
-    saveData();
-    inputElement.value = "";
+    if (inputElement.value == "") {
+        alert("Type a todo!");
+    } else {
+        createTodoItem(inputElement.value);
+        todoStorageArr.push(inputElement.value);
+        saveData();
+        inputElement.value = "";
+    }
 };
 
+let todoStorageArr = [];
 window.onload = function () {
     loadData();
-    
     for (let i = 0; i < todoStorageArr.length; i++) {
         createTodoItem(todoStorageArr[i]);
     }
@@ -25,7 +28,6 @@ sub.addEventListener("keyup", function (event) {
 });
 
 function onCheckboxClick(element) {
-
     const content = element.parentNode.querySelector(".todosAdd").innerText;
     for (let i = 0; i < todoStorageArr.length; i++) {
         if (todoStorageArr[i] == content) {
@@ -46,7 +48,7 @@ function deleteElement(element) {
 
 function createTodoItem(content) {
     document.getElementById("listtodo").innerHTML +=
-        "<li class='setPriority'><i class='fas fa-check' onclick='onCheckboxClick(this)'></i>" + "<span class='todosAdd'>" + content + "</span>" + "</li>";
+        "<li><i class='fas fa-check' onclick='onCheckboxClick(this)'></i>" + "<span class='todosAdd'>" + content + "</span><button class='btnPriority highBtn'>High</button><button class='btnPriority mediumBtn'>Medium</button><button class='btnPriority lowBtn'>Low</button>" + "</li>";
 }
 
 function saveData() {
@@ -63,6 +65,13 @@ function loadData() {
         todoStorageArr = [];
     } else {
         todoStorageArr = data.split(',');
-
     }
 }
+
+/* let red = document.getElementsByClassName("highBtn");
+let yellow = document.getElementsByClassName("mediumBtn");
+let green = document.getElementsByClassName("lowBtn");
+
+red.onclick = function () { red.previousSibling.classList.add("redIsHigh") }
+yellow.onclick = function () { yellow.previousSibling.classList.add("yellowIsMedium") }
+green.onclick = function () { green.previousSibling.classList.add("greenIsLow") } */
