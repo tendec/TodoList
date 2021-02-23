@@ -8,6 +8,7 @@ add.onclick = function () {
         todoStorageArr.push(inputElement.value);
         saveData();
         inputElement.value = "";
+        setEventPriorityButtonClick();
     }
 };
 
@@ -17,6 +18,7 @@ window.onload = function () {
     for (let i = 0; i < todoStorageArr.length; i++) {
         createTodoItem(todoStorageArr[i]);
     }
+    setEventPriorityButtonClick();
 }
 
 let sub = document.getElementById("thingstodo");
@@ -68,10 +70,32 @@ function loadData() {
     }
 }
 
-/* let red = document.getElementsByClassName("highBtn");
-let yellow = document.getElementsByClassName("mediumBtn");
-let green = document.getElementsByClassName("lowBtn");
-
-red.onclick = function () { red.previousSibling.classList.add("redIsHigh") }
-yellow.onclick = function () { yellow.previousSibling.classList.add("yellowIsMedium") }
-green.onclick = function () { green.previousSibling.classList.add("greenIsLow") } */
+function setEventPriorityButtonClick() {
+    let red = document.getElementsByClassName("highBtn");
+    for (let i = 0; i < red.length; i++) {
+        red[i].onclick = function () {
+            if (red[i].parentNode.children[1].classList.contains("yellowIsMedium") || red[i].parentNode.children[1].classList.contains("greenIsLow")) {
+                red[i].parentNode.children[1].classList.remove("yellowIsMedium", "greenIsLow");
+            };
+            red[i].parentNode.children[1].classList.add("redIsHigh");
+        }
+    };
+    let yellow = document.getElementsByClassName("mediumBtn");
+    for (let j = 0; j < yellow.length; j++) {
+        yellow[j].onclick = function () {
+            if (yellow[j].parentNode.children[1].classList.contains("redIsHigh") || yellow[j].parentNode.children[1].classList.contains("greenIsLow")) {
+                yellow[j].parentNode.children[1].classList.remove("redIsHigh", "greenIsLow");
+            };
+            yellow[j].parentNode.children[1].classList.add("yellowIsMedium");
+        }
+    }
+    let green = document.getElementsByClassName("lowBtn");
+    for (let o = 0; o < green.length; o++) {
+        green[o].onclick = function () {
+            if (green[o].parentNode.children[1].classList.contains("yellowIsMedium") || green[o].parentNode.children[1].classList.contains("redIsHigh")) {
+                green[o].parentNode.children[1].classList.remove("yellowIsMedium", "redIsHigh");
+            };
+            green[o].parentNode.children[1].classList.add("greenIsLow");
+        }
+    }
+}
