@@ -114,18 +114,6 @@ li:hover .btnPriority {
     animation-iteration-count: infinite;
 }
 
-.redIsHigh {
-    color: rgb(247, 78, 78);
-}
-
-.yellowIsMedium {
-    color: rgb(255, 252, 60);
-}
-
-.greenIsLow {
-    color: rgb(92, 238, 92);
-}
-
 .mediumBtn {
     margin: 5px;
     width: 50px;
@@ -167,6 +155,21 @@ li:hover .btnPriority {
     to {
         color: rgb(92, 238, 92)
     }
+}
+
+.redIsHigh {
+    color: rgb(247, 78, 78);
+    animation: highBtnAnimation 0.5s;
+}
+
+.yellowIsMedium {
+    color: rgb(255, 252, 60);
+    animation: mediumBtnAnimation 0.5s;
+}
+
+.greenIsLow {
+    color: rgb(92, 238, 92);
+    animation: lowBtnAnimation 0.5s;
 }
 
 button.btnPriority:hover {
