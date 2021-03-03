@@ -3,6 +3,9 @@ add.onclick = function () {
     let inputElement = document.getElementById("thingstodo");
     if (inputElement.value == "") {
         alert("Type a todo!");
+    } else if (todoStorageArr.includes(inputElement.value)) {
+        alert("The todo existed!");
+        inputElement.value = "";
     } else {
         createTodoItem(inputElement.value);
         todoStorageArr.push(inputElement.value);
